@@ -1,0 +1,75 @@
+*, *::after, *::before {
+    box-sizing: border-box;
+}
+
+#overlay {
+    position: fixed;
+    opacity: 0;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background-color: rgba(0, 0, 0, 0.5);
+    pointer-events: none;
+    transition: 200ms ease-in-out;
+}
+#overlay.active {
+    pointer-events: all;
+    opacity: 1;
+}
+
+#modal {
+    border: 1px solid black; 
+    border-radius: 10px; 
+    position: fixed; top: 50%; 
+    left: 50%; 
+    transform: translate(-50%, -50%) scale(0); 
+    transition: 200ms ease-in-out;
+    z-index: 10; 
+    background-color: white; 
+    width:1000px; 
+    max-width: 80%;
+}
+#modal.active {
+    transform: translate(-50%, -50%) scale(1);
+}
+
+
+
+
+
+
+
+.upload{
+    width: 125px;
+    position: relative;
+    margin: auto;
+  }
+  
+  .upload img{
+    border-radius: 50%;
+    border: 8px solid #DCDCDC;
+  }
+  
+  .upload .round{
+    position: absolute;
+    bottom: 0;
+    right: 0;
+    background: #00B4FF;
+    width: 32px;
+    height: 32px;
+    line-height: 33px;
+    text-align: center;
+    border-radius: 50%;
+    overflow: hidden;
+  }
+  
+  .upload .round input[type = "file"]{
+    position: absolute;
+    transform: scale(2);
+    opacity: 0;
+  }
+  
+  input[type=file]::-webkit-file-upload-button{
+      cursor: pointer;
+  }
